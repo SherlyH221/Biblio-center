@@ -1,0 +1,62 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="signup-cont">
+      <h2>Sign up</h2>
+      <form [formGroup]="signupForm" id="signup-form" >
+        <div>
+          <ion-icon name="person-outline"></ion-icon>
+          <input type="text" placeholder="Name" formControlName="name">
+        </div>
+        <div>
+          <ion-icon name="mail-outline"></ion-icon>
+          <input type="email" placeholder="Email..." formControlName="email">
+        </div>
+        <div>
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input type="password" placeholder="Password..." formControlName="password">
+        </div>
+        <div>
+          <ion-icon name="call-outline"></ion-icon>
+          <input type="number" placeholder="Phone..." formControlName="phone">
+        </div>
+
+        <div class="signup-btn-cont">
+          <ion-button fill="#183446" shape="round" class="signup-btn" (click)="signUp()" [disabled]="!signupForm.valid">Sign up</ion-button>
+        </div>
+
+        <div>
+          <ng-container *ngFor="let validation of validationMessage.name">
+            <div class="error_message" *ngIf="signupForm.get('name').hasError(validation.type) && (signupForm.get('name').dirty || signupForm.get('name').touched)">
+               *{{validation.message}}
+            </div>
+        </ng-container>
+          <ng-container *ngFor="let validation of validationMessage.email">
+            <div class="error_message" *ngIf="signupForm.get('email').hasError(validation.type) && (signupForm.get('email').dirty || signupForm.get('email').touched)">
+               *{{validation.message}}
+            </div>
+        </ng-container>
+          <ng-container *ngFor="let validation of validationMessage.password">
+               <div class="error_message" *ngIf="signupForm.get('password').hasError(validation.type) && (signupForm.get('password').dirty || signupForm.get('password').touched)">
+                  *{{validation.message}}
+               </div>
+           </ng-container>
+           <ng-container *ngFor="let validation of validationMessage.phone">
+            <div class="error_message" *ngIf="signupForm.get('phone').hasError(validation.type) && (signupForm.get('phone').dirty || signupForm.get('phone').touched)">
+               *{{validation.message}}
+            </div>
+        </ng-container>
+      </div>
+
+        
+      </form>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,30 @@
+
+
+<ion-content>
+  <app-list *ngIf="showList"></app-list>
+  <app-mycourses *ngIf="showCourses"></app-mycourses>
+</ion-content>
+
+
+<ion-toolbar>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" >
+      <ion-tab-button tab="home" (click)="openList()">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="speakers" (click)="openMycourses()">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-label>My courses</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="map" (click)="logOut()">
+        <ion-icon name="exit-outline"></ion-icon>
+        <ion-label>Log out</ion-label>
+      </ion-tab-button>
+  
+    </ion-tab-bar>
+  </ion-tabs>
+  
+</ion-toolbar>

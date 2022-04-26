@@ -1,0 +1,47 @@
+ion-content{
+    --ion-background-color: #046E8F;
+}
+  
+  ion-header{
+    position: absolute  ;
+}
+  
+  ion-toolbar{
+    --ion-background-color : transparent ;
+    --opacity : 0 ;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    height: 100%;
+  }
+  
+  .signup-cont{
+    padding: 32px;
+    background-color: #38AECC;
+    border-radius: 16px;
+  }
+  
+   input {
+    outline: none;
+    border: none;
+    border-bottom: 8px;
+    background-color: transparent;
+    margin: 16px;
+  }
+  
+  .signup-btn-cont{
+    text-align: center;
+    padding-top: 16px;
+  }
+
+  .error_message{
+    margin-top: 16px;
+    font-size: 16px;
+    color: red;
+  }

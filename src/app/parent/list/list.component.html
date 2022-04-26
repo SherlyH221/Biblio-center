@@ -1,0 +1,19 @@
+<ion-header >
+  <ion-toolbar class="custom-bg">
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="d-flex justify-content-center">
+    <h2>Welcome to our center {{userNow}}</h2>
+  </div>
+  <ion-grid>
+    
+    <ion-row>
+      <ion-col size="6"   *ngFor="let course of courses" (click)="showDetails(course)" >
+          <app-oneitemlist [item]="course"></app-oneitemlist>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+</ion-content>

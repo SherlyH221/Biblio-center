@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <div class="container">
+      <div class="login-cont">
+        <h2>Welcome Back</h2>
+        <form id="login-form" [formGroup]="loginForm">
+          <div>
+            <ion-icon name="mail-outline"></ion-icon>
+            <input type="email" placeholder="Email..." formControlName="email">
+          </div>
+          <div>
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" placeholder="Password..." formControlName="password">
+          </div>
+
+          <div class="login-btn-cont">
+            <ion-button fill="#183446" shape="round" class="login-btn" (click)="login()" [disabled]="!loginForm.valid">Login</ion-button>
+          </div>
+
+          <div>
+            <ng-container *ngFor="let validation of validationMessage.email">
+              <div class="error_message" *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+                 *{{validation.message}}
+              </div>
+          </ng-container>
+            <ng-container *ngFor="let validation of validationMessage.password">
+                 <div class="error_message" *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                    *{{validation.message}}
+                 </div>
+             </ng-container>
+          </div>
+
+          <div class="sign-up">
+            <p>Don't have an account? <a [routerLink]="['/signup']">Sign Up...</a></p>
+          </div>
+          
+        </form>
+      </div>
+  </div>
+  
+</ion-content>

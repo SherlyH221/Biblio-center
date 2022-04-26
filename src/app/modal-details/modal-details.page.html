@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row class="justify-content-center">
+    <ion-col size="10">
+      <ion-card>
+        <ion-img src={{courseSelected.img}}></ion-img>
+        <ion-card-header >
+          <ion-card-title>{{courseSelected.title}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{courseSelected.moreDetails}}
+          <div>
+            <p><strong>Training Duration : </strong>{{courseSelected.duration}} </p><p><strong>Price: </strong>{{courseSelected.price}}$</p>
+          </div>
+        </ion-card-content>
+        <div class="d-flex justify-content-end">
+          <ion-button (click)="subscribeCourse()">Subscribe!!</ion-button>
+        </div>
+  
+        
+        
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>
+
+
